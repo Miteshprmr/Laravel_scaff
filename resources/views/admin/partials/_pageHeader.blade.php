@@ -9,6 +9,9 @@
 	<div class="breadcrumb-line">
 		<ul class="breadcrumb">
 			<li><a href="/admin"><i class="icon-home2 position-left"></i> Admin</a></li>
+			@if (View::hasSection('mid-page'))
+				<li><a href=@yield('mid-page-link')>@yield('mid-page')</a></li>
+			@endif
 			<li class="active">@yield('page')</li>
 		</ul>
 	</div>

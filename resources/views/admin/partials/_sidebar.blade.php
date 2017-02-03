@@ -29,7 +29,7 @@
 					<!-- Main -->
 					<li class="navigation-header"><span>Main</span> <i class="icon-menu" title="Main pages"></i></li>
 					<li class="{{ Request::is('admin') ? "active" : "" }}"><a href="/admin"><i class="icon-home4"></i> <span>Dashboard</span></a></li>
-					<li  class="{{ Request::is('admin/users') ? "active" : "" }}">
+					<li  class="{{ Request::is('admin/users', 'admin/user/*') ? "active" : "" }}">
 						<a href="{{ route('admin.users') }}"><i class="icon-people"></i> <span>User List</span></a>
 					</li>
 					<!-- /main -->

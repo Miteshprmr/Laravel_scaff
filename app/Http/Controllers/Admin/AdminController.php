@@ -8,6 +8,7 @@ use Auth;
 use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Session;
 use View;
 
 class AdminController extends Controller {
@@ -34,7 +35,7 @@ class AdminController extends Controller {
      */
     public function getUsersList() {
         $users = User::all();
-        return view('admin.users')->withUsers($users);
+        return view('admin.users.list')->withUsers($users);
     }
 
     /**
@@ -48,6 +49,39 @@ class AdminController extends Controller {
         return view('admin.users.edit')->withUser($user);
     }
 
+    /**
+     * Update user detail
+     *
+     * @param  array  $data, id
+     * @return \Illuminate\Http\Response
+     */
+    public function postUserEdit(Request $request, $id) {
+
+        // validate the data
+        $this->validate($request, array(
+            'name'         => 'required|max:255',
+            'email'        => "required|email|unique:users,email,$id",
+            'state'        => 'required|max:255',
+            'phone_number' => 'required'
+        ));
+
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->city = $request->city;
+        $user->state = $request->state;
+        $user->phone_number = $request->phone_number;
+        $user->occupation = $request->occupation;
+        if(isset($request->is_sub)) {
+            $user->is_subscriber = 1;
+        } else {
+            $user->is_subscriber = 0;
+        }
+        $user->save();
+
+        Session::flash('success', 'The User was successfully save!');
+        return redirect()->route('admin.users');
+    }
 
     /**
      * Delete user

@@ -19,6 +19,7 @@
 				<div class="content-wrapper">
 
     				@include('admin.partials._pageHeader')
+		    		@include('partials._messages')
 
 					<!-- Content area -->
 					<div class="content content-width">

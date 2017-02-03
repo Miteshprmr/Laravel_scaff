@@ -11,6 +11,7 @@
 
 
 @section('content')
+	@include('partials._messages')
 	
 	<div class="login-container">
 		<!-- Page container -->

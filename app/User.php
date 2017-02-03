@@ -26,4 +26,85 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Set the user's name.
+     *
+     * @param  string  $value
+     * @return void
+     */
+    public function setNameAttribute($value) {
+        $this->attributes['name'] = ucwords(strtolower($value));
+    }
+
+    /**
+     * Set the user's city.
+     *
+     * @param  string  $value
+     * @return void
+     */
+    public function setCityAttribute($value) {
+        $this->attributes['city'] = ucwords(strtolower($value));
+    }
+
+    /**
+     * Set the user's state.
+     *
+     * @param  string  $value
+     * @return void
+     */
+    public function setStateAttribute($value) {
+        $this->attributes['state'] = ucwords(strtolower($value));
+    }
+
+    /**
+     * Set the user's occupation.
+     *
+     * @param  string  $value
+     * @return void
+     */
+    public function setOccupationAttribute($value) {
+        $this->attributes['occupation'] = ucwords(strtolower($value));
+    }
+
+
+    /**
+     * Set the user's name.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getNameAttribute($value) {
+        return ucwords(strtolower($value));
+    }
+
+    /**
+     * get the user's city.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getCityAttribute($value) {
+        return ucwords(strtolower($value));
+    }
+
+    /**
+     * get the user's state.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getStateAttribute($value) {
+        return ucwords(strtolower($value));
+    }
+
+    /**
+     * get the user's occupation.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getOccupationAttribute($value) {
+        return ucwords(strtolower($value));
+    }
 }

@@ -18,9 +18,25 @@ $(window).on('load', function() {
 
 $(function() {
 
+    // custom js
+    setTimeout(function(){
+        $('.message-alert').remove();
+    }, 5000);
+
+     $('#refreshform').click(function(){
+        $('#form')[0].reset();
+    });
+
     // Disable CSS transitions on page load
     $('body').addClass('no-transitions');
 
+    // Switchery toggles
+    // ------------------------------
+
+    var switches = Array.prototype.slice.call(document.querySelectorAll('.switch'));
+    switches.forEach(function(html) {
+        var switchery = new Switchery(html, {color: '#4CAF50'});
+    });
 
 
     // ========================================
