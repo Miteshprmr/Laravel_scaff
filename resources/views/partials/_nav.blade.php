@@ -6,7 +6,7 @@
 			@if(Auth::guard('admin')->check())
 				<ul class="nav navbar-nav visible-xs-block">
 					<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
-					<!-- <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li> -->
+					<li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
 				</ul>
 			@endif
 		</div>
@@ -20,7 +20,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown dropdown-user">
 						<a class="dropdown-toggle" data-toggle="dropdown">
-							<!-- <img src="assets/images/placeholder.jpg" alt=""> -->
+							<img src="{{ "https://www.gravatar.com/avatar/" . md5(strtolower(trim($admin->email))) . "?s=50&d=wavatar"}}" alt="">
 							<span>{{$admin->name}}</span>
 							<i class="caret"></i>
 						</a>

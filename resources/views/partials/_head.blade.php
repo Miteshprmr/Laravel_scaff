@@ -24,5 +24,5 @@
 
 
 <!-- Theme JS files -->
-<script type="text/javascript" src="" c="/js/core/app.js"></script>
+<script type="text/javascript" src="/js/core/app.js"></script>
 <!-- /theme JS files -->

@@ -2,6 +2,8 @@
 
 @section('title', 'Dashboard')
 
+@section('page', 'Dashboard')
+
 @section('content')
 
 	<div class="page-container">
@@ -16,11 +18,11 @@
 				<!-- Main content -->
 				<div class="content-wrapper">
 
+    				@include('admin.partials._pageHeader')
+					
 					<!-- Content area -->
-					<div class="content">
+					<div class="content content-width">
 
-
-					<div style="height:530px"></div>
 @endsection
 
 @section('scripts')

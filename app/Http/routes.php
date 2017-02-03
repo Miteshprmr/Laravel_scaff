@@ -23,4 +23,8 @@ Route::group(['prefix' => 'admin'], function () {
 	Route::post('login', 'Admin\AdminAuthController@postLogin');
 	Route::get('logout', ['as' => 'admin.logout', 'uses' => 'Admin\AdminAuthController@getLogout']);
 	
+	Route::get('/users', ['as' => 'admin.users', 'uses' => 'Admin\AdminController@getUsersList']);
+	Route::get('/user/edit/{id}', ['as' => 'admin.user.edit', 'uses' => 'Admin\AdminController@getUserEditForm']);
+	Route::post('/user/edit/{id}', ['as' => 'admin.user.edit', 'uses' => 'Admin\AdminController@postUserEdit']);
+	Route::delete('/user/delete/{id}', ['as' => 'admin.user.delete', 'uses' => 'Admin\AdminController@deleteUser']);
 });

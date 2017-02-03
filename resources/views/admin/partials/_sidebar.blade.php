@@ -28,11 +28,12 @@
 
 					<!-- Main -->
 					<li class="navigation-header"><span>Main</span> <i class="icon-menu" title="Main pages"></i></li>
-					<li class="active"><a href="index.html"><i class="icon-home4"></i> <span>Dashboard</span></a></li>
-					<li>
-						<a href=""><i class="icon-people"></i> <span>User pages</span></a>
+					<li class="{{ Request::is('admin') ? "active" : "" }}"><a href="/admin"><i class="icon-home4"></i> <span>Dashboard</span></a></li>
+					<li  class="{{ Request::is('admin/users') ? "active" : "" }}">
+						<a href="{{ route('admin.users') }}"><i class="icon-people"></i> <span>User List</span></a>
 					</li>
 					<!-- /main -->
+
 				</ul>
 			</div>
 		</div>
