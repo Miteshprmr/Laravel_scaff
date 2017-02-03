@@ -1,12 +1,13 @@
 {
     "name": "Laravel_scaff",
-    "description": "Basic Laravel Scaffolding.",
+    "description": "Basic Laravel Scaffolding with an admin panel and user dashboard.",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.2.*"
+        "laravel/framework": "5.2.*",
+        "laravelcollective/html": "5.2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
